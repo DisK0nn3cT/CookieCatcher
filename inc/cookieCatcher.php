@@ -1,7 +1,7 @@
 <?php
 /**
- * MySQL QueryLab Class
- * - class used to connect and interact with the MySQL database.
+ * CookieCatcher Class
+ * - core functionality of the CookieCatcher application
  *
  * @package classes
  * @copyright Copyright 2013 DisK0nn3cT
