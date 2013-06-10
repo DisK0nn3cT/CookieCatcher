@@ -26,8 +26,7 @@ class mysqlQueryLab {
       }
       return true;
     } else {
-      $this->error('connection');
-      die('connection error');
+      $this->error('Could connect to MYSQL');
       return false;
     }
   }
@@ -41,7 +40,7 @@ class mysqlQueryLab {
   {
     $database = mysql_select_db($db_NAME,$this->connection);
     if(!$database) {
-      $this->error('connection');
+      $this->error('Could not select database');
     }
   }
    
@@ -110,11 +109,12 @@ class mysqlQueryLab {
    * Display any custom errors / redirects or log management
    * @return void
    */
-  public function error()
+  public function error($message='not defined')
   {
     // optional error logging goes here
     // do not display verbose errors to the user!
-    die("An error has occurred.");
+    $error = sprintf("An error has occured: %s.", $message);
+    die($error);
   }
 }
  

