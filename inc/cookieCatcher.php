@@ -32,7 +32,7 @@ class cookieCatcher extends mysqlQueryLab {
   {
     if($cookieID>0) {
       $query = sprintf("SELECT * FROM cookies WHERE id=%s",
-                (int)$cookieID);
+                (int)$cookieID); 
       $cookies = $this->execute($query);
     } else {
       $query = sprintf("SELECT * FROM cookies");
@@ -55,7 +55,6 @@ class cookieCatcher extends mysqlQueryLab {
     curl_setopt($ch,CURLOPT_COOKIE,$cookie->results[0]['cookiedata']);
     $result = curl_exec($ch);
     $result = preg_replace('/src="(?!http)/i','src="'.$cookie->results[0]['url'],$result);
-    //$result = str_replace("=\"/","=".$cookie->results[0]['url']."/",$result);
     curl_close($ch);
     return $result;
   }

