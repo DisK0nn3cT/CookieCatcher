@@ -1,0 +1,2 @@
+## Replace your domain below and insert into crontab ##
+*/3 * * * * lynx "http://youdomain.net/?action=refresh-all"

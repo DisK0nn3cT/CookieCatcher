@@ -1,0 +1,32 @@
+/** Native **//
+h1,h2,h3 { color:#333; font-family: 'Crushed', cursive; }
+hr { margin:0; border:none; border-bottom:1px solid #ddd; }
+span { font-family: courier; }
+body {
+  background: -moz-linear-gradient(top,  #cedce7 0%, #596a72 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cedce7), color-stop(100%,#596a72));
+  background: -webkit-linear-gradient(top,  #cedce7 0%,#596a72 100%);
+  background: -o-linear-gradient(top,  #cedce7 0%,#596a72 100%);
+  background: -ms-linear-gradient(top,  #cedce7 0%,#596a72 100%);
+  background: linear-gradient(top,  #cedce7 0%,#596a72 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 );
+  min-height:1000px;
+}
+/** IDs **/
+#payload { padding:10px; background:#ffffff; border:1px dashed #666666; text-align:center; font-family:courier; color:#666 }
+#payload2 { padding:10px; background:#ffffff; border:1px dashed #666666; text-align:left; font-family:courier; color:#666 }
+#tag { padding:2px; background:#666; color:#ffffff; font-weight: normal; font-size:12px; text-align:center; width:80px;}
+#frame { width:100%; height:400px; border:1px dashed #666666; }
+#counter { color:#fff; background:red; text-align:center; font-family:courier;width:45px;}
+#ascii { font-size:6px; }
+
+/** Classes **/
+.payloadselect { float:left; }
+.payloadselect select { padding:5px; background:#fff; border:1px solid #ccc; font-family:courier; }
+.payloadcode { float:left; font-family:courier; }
+.payloadcode input { background:#ddd; padding:5px; border:1px solid #ccc; font-family:courier; }
+.table { background: #ffffff; border:1px dashed #666666; opacity:0.5; font-family:courier; font-size:14px;}
+.column { float:left; padding:5px 15px; min-width:5%; background-color:#fff; margin-bottom:2px;}
+.right { float:right; }
+.button { display: block; margin: 10px 0 0 10px; text-align: center; text-decoration: none; font-size: 16px; text-transform:uppercase; color:black;  }
+.button:hover { display: block; margin: 10px 0 0 10px; text-align: center; text-decoration: none; font-size: 16px; text-transform:uppercase; color:blue;  }
