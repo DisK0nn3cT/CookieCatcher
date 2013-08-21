@@ -9,4 +9,5 @@ $siteHost       = 'm19.us';
 $siteURL        = sprintf("http://%s/",$_SERVER['HTTP_HOST']);
 
 $emailAddress   = "danny.chrastil@gmail.com";
+
 ?>
