@@ -1,13 +1,13 @@
 <?php
 
 $db_HOST        = '127.0.0.1';
-$db_USERNAME    = 'catcher';
-$db_PASSWORD    = 'CookieP@$$';
-$db_NAME        = 'cookiecatcher';
+$db_USERNAME    = 'username';
+$db_PASSWORD    = 'password';
+$db_NAME        = 'database';
 
-$siteHost       = 'm19.us';
+$siteHost       = 'yourdomain.net';
 $siteURL        = sprintf("http://%s/",$_SERVER['HTTP_HOST']);
 
-$emailAddress   = "danny.chrastil@gmail.com";
+$emailAddress   = "youremail@gmail.com";
 
 ?>
