@@ -9,6 +9,19 @@ https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 For more information on Session Hijacking visit the following link:
 https://www.owasp.org/index.php/Session_hijacking_attack
 
+Features
+-------
+* Prebuilt payloads to steal cookie data
+* Just copy and paste payload into a XSS vulnerability
+* Will send email notification when new cookies are stolen
+* Will attempt to refresh cookies every 3 minutes to avoid inactivity timeouts
+* Provides full HTTP requests to hijack sessions through a proxy (BuRP, etc)
+* Will attempt to load a preview when viewing the cookie data
+* PAYLOADS
+* * Basic AJAX Attack
+* * HTTPONLY evasion for Apache CVE-20120053
+* * More to come
+
 Requirements
 ------------
 
