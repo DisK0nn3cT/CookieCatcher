@@ -21,8 +21,12 @@ CookieCatcher is built for a LAMP stack running the following:
 
 Installation
 ------------
+* Download the source from github `git clone https://github.com/DisK0nn3cT/CookieCatcher.git` or use the ZIP file and extract it on your server. 
+* Setup the directory as a virtualhost in Apache (I won't go over these details, however, you may ask me via email it google it.)
+* Create a database for the application and load the SETUP.sql file.
+* Setup a cron job as shown in the SETUP.cron file.
 
-Volunteers
+Contribute
 ----------
 If you have ideas or suggestions on how to improve upon the existing application and would like to offer your time, please contact me via email.
 
