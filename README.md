@@ -26,6 +26,10 @@ Installation
 * Create a database for the application and load the SETUP.sql file.
 * Setup a cron job as shown in the SETUP.cron file.
 
+DEMO
+----
+A demo of the application can be viewed at http://m19.us. Small domain names are recommended to cut down on the character space needed for the payloads.
+
 Contribute
 ----------
 If you have ideas or suggestions on how to improve upon the existing application and would like to offer your time, please contact me via email.
