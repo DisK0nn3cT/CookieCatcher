@@ -41,7 +41,9 @@ Installation
 
 DEMO
 ----
-A demo of the application can be viewed at http://m19.us. Small domain names are recommended to cut down on the character space needed for the payloads.
+A live demo of the application can be viewed at http://m19.us. Small domain names are recommended to cut down on the character space needed for the payloads.
+
+* YouTube Video: http://www.youtube.com/watch?v=2GH6RRozOp
 
 Contribute
 ----------
