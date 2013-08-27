@@ -99,7 +99,7 @@ payload[0] = "";
 payload[<?php echo $k;?>] = "<?php echo $p['payload'];?>";
 <?php } ?>
 </script>
-<link href="/style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 </head>
 
 <body onload="c()">
