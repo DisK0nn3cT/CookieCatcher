@@ -26,7 +26,7 @@ class mysqlQueryLab {
       }
       return true;
     } else {
-      $this->error('Could connect to MYSQL');
+      $this->error('Could not connect to MYSQL');
       return false;
     }
   }
