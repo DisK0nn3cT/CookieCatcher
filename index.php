@@ -74,8 +74,8 @@ if($cookies->recordCount>0) {
 ## SET ATTACK/PAYLOAD
 $pl = $catcher->payloads();
 foreach($pl->results as $payload) {
-  $payloads[$payload['id']]['name'] = $payload['name']; 
-  $payloads[$payload['id']]['payload'] = urlencode(str_replace('{siteURL}',$siteURL,$payload['payload'])); 
+  $payloads[$payload['id']]['name'] = $payload['name'];
+  $payloads[$payload['id']]['payload'] = urlencode(str_replace('{siteURL}',$siteURL,$payload['payload']));
 }
 
 ?>
@@ -104,21 +104,21 @@ payload[<?php echo $k;?>] = "<?php echo $p['payload'];?>";
 
 <body onload="c()">
 <pre id="ascii">
-      ...                                        ..         .                        ...                           s                                                  
-   xH88"`~ .x8X                            < .z@8"`        @88>                   xH88"`~ .x8X                    :8                .uef^"                            
- :8888   .f"8888Hf        u.          u.    !@88E          %8P                  :8888   .f"8888Hf                .88              :d88E                     .u    .   
-:8888>  X8L  ^""`   ...ue888b   ...ue888b   '888E   u       .         .u       :8888>  X8L  ^""`        u       :888ooo       .   `888E            .u     .d88B :@8c  
-X8888  X888h        888R Y888r  888R Y888r   888E u@8NL   .@88u    ud8888.     X8888  X888h          us888u.  -*8888888  .udR88N   888E .z8k    ud8888.  ="8888f8888r 
-88888  !88888.      888R I888>  888R I888>   888E`"88*"  ''888E` :888'8888.    88888  !88888.     .@88 "8888"   8888    <888'888k  888E~?888L :888'8888.   4888>'88"  
-88888   %88888      888R I888>  888R I888>   888E .dN.     888E  d888 '88%"    88888   %88888     9888  9888    8888    9888 'Y"   888E  888E d888 '88%"   4888> '    
-88888 '> `8888>     888R I888>  888R I888>   888E~8888     888E  8888.+"       88888 '> `8888>    9888  9888    8888    9888       888E  888E 8888.+"      4888>      
-`8888L %  ?888   ! u8888cJ888  u8888cJ888    888E '888&    888E  8888L         `8888L %  ?888   ! 9888  9888   .8888Lu= 9888       888E  888E 8888L       .d888L .+   
- `8888  `-*""   /   "*888*P"    "*888*P"     888E  9888.   888&  '8888c. .+     `8888  `-*""   /  9888  9888   ^%888*   ?8888u../  888E  888E '8888c. .+  ^"8888*"    
-   "888.      :"      'Y"         'Y"      '"888*" 4888"   R888"  "88888%         "888.      :"   "888*""888"    'Y"     "8888P'  m888N= 888>  "88888%       "Y"      
-     `""***~"`                                ""    ""      ""      "YP'            `""***~"`      ^Y"   ^Y'               "P'     `Y"   888     "YP'                 
-                                                                                                                                        J88"                          
-                                                                                                                                        @%                            
-                                                                                                                                      :"                              
+      ...                                        ..         .                        ...                           s                                            
+   xH88"`~ .x8X                            < .z@8"`        @88>                   xH88"`~ .x8X                    :8                .uef^"                      
+ :8888   .f"8888Hf        u.          u.    !@88E          %8P                  :8888   .f"8888Hf                .88              :d88E                     .u    .
+:8888>  X8L  ^""`   ...ue888b   ...ue888b   '888E   u       .         .u       :8888>  X8L  ^""`        u       :888ooo       .   `888E            .u     .d88B :@8c
+X8888  X888h        888R Y888r  888R Y888r   888E u@8NL   .@88u    ud8888.     X8888  X888h          us888u.  -*8888888  .udR88N   888E .z8k    ud8888.  ="8888f8888r
+88888  !88888.      888R I888>  888R I888>   888E`"88*"  ''888E` :888'8888.    88888  !88888.     .@88 "8888"   8888    <888'888k  888E~?888L :888'8888.   4888>'88"
+88888   %88888      888R I888>  888R I888>   888E .dN.     888E  d888 '88%"    88888   %88888     9888  9888    8888    9888 'Y"   888E  888E d888 '88%"   4888> '
+88888 '> `8888>     888R I888>  888R I888>   888E~8888     888E  8888.+"       88888 '> `8888>    9888  9888    8888    9888       888E  888E 8888.+"      4888>
+`8888L %  ?888   ! u8888cJ888  u8888cJ888    888E '888&    888E  8888L         `8888L %  ?888   ! 9888  9888   .8888Lu= 9888       888E  888E 8888L       .d888L .+
+ `8888  `-*""   /   "*888*P"    "*888*P"     888E  9888.   888&  '8888c. .+     `8888  `-*""   /  9888  9888   ^%888*   ?8888u../  888E  888E '8888c. .+  ^"8888*"
+   "888.      :"      'Y"         'Y"      '"888*" 4888"   R888"  "88888%         "888.      :"   "888*""888"    'Y"     "8888P'  m888N= 888>  "88888%       "Y"
+     `""***~"`                                ""    ""      ""      "YP'            `""***~"`      ^Y"   ^Y'               "P'     `Y"   888     "YP'           
+                                                                                                                                        J88"                    
+                                                                                                                                        @%                      
+                                                                                                                                      :"                        
 </pre>
 
 <?php if($message=='') { ?>
@@ -136,9 +136,19 @@ X8888  X888h        888R Y888r  888R Y888r   888E u@8NL   .@88u    ud8888.     X
 </div>
 <?php } ?>
 
+    <?php if(isset($_GET['reset'])) {
+      $reset = $catcher->reset();
+    }?>
+
 <p><?php echo $message; ?></p>
 
+<?php if($message=='') { ?>
+  <div class="table"><a class="button" href="?reset"><p>Delete All</a><a class="button" href="?CookieID">Refresh</p></a></div>
+<?php } ?>
+
 <div class="table"><?php echo $message=='' ? $cookieResults : '<a class="button" href="?">back</a><a class="button" href="?">delete</a>'; ?></p></div>
+
+
 
 </body>
 </html>
